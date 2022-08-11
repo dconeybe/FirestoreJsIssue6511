@@ -1,5 +1,5 @@
 import { initializeApp} from '@firebase/app';
-import {connectFirestoreEmulator, DocumentReference, DocumentData, deleteDoc, getFirestore, collection, doc, updateDoc, setDoc, onSnapshot, enableMultiTabIndexedDbPersistence} from '@firebase/firestore';
+import {connectFirestoreEmulator, DocumentReference, DocumentData, deleteDoc, getFirestore, collection, doc, updateDoc, setDoc, onSnapshot, setLogLevel, enableIndexedDbPersistence, enableMultiTabIndexedDbPersistence} from '@firebase/firestore';
 import firebase from "firebase/compat";
 
 const firebaseConfig = {
@@ -11,7 +11,14 @@ initializeApp(firebaseConfig);
 
 const db = getFirestore();
 connectFirestoreEmulator(db, "localhost", 8080);
+
+// To experiment without multi-tab mode, swap the commented lines below.
 enableMultiTabIndexedDbPersistence(db);
+//enableIndexedDbPersistence(db);
+
+// Uncomment the line below to enable debug logging.
+//setLogLevel("debug");
+
 const colRef = collection(db, "denver");
 const docRef = doc(colRef, "mydoc");
 
@@ -50,6 +57,5 @@ async function main() {
         }
     });
 }
-
 
 main();
