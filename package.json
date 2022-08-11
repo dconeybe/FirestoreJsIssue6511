@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "firebase": "^9.9.2"
+    "firebase": "9.6.10"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
