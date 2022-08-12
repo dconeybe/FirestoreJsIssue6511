@@ -18,22 +18,21 @@ with a click of the "delete" button followed by the "create" button.
 3. Run `yarn build`
 4. Run `python -m http.server`
 5. Open a web browser to http://localhost:8000 ("Tab 1")
-6. Click the "Create the document" button
+6. Click the "Write" button to create the document
 7. Open another web browser tab to the same URL, http://localhost:8000 ("Tab 2")
-8. Open the debug console on both tabs, so that you can see text written via `console.log()`
-9. Refresh Tab 1
-10. Refresh Tab 2
-11. Clear the debug console on both Tab 1 and Tab 2
-12. Press the "Update the document" button in Tab 2
+8. Refresh Tab 1
+9. Refresh Tab 2
+10. Click "Register Snapshot Listener" on Tab 1
+10. Click the "Clear Logs" button on Tab 1
+11. Press the "Write" button in Tab 2
 
 # Expected Results
 
-In both Tab 1 and Tab 2 there is one "Got value" line logged with the latest value.
+In Tab 1 there is one "Got value" line logged with the value set by Tab 2.
 
 # Actual Results
 
-In Tab 2 there is one "Got value" line logged with the latest value, as expected.
-However, in Tab 1 there are three "Got value" line logged:
-The 1st line has the new value;
+In Tab 1 there are 3 "Got value" lines logged:
+The 1st line has the new value (as expected);
 The 2nd line has the old value;
 The 3rd line has the new value.
