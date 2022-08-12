@@ -51,7 +51,11 @@ async function main() {
 
     onSnapshot(docRef, (snapshot) => {
         if (snapshot.exists()) {
-            console.log(`zzyzx Got value: ${ snapshot.get("key") }`);
+            console.log(
+                `zzyzx Got value: ${snapshot.get("key")}`
+                + ` fromCache=${snapshot.metadata.fromCache}`
+                + ` hasPendingWrites=${snapshot.metadata.hasPendingWrites}`
+            );
         } else {
             console.log("zzyzx Got value: [document does not exist]");
         }
