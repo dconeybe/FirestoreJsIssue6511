@@ -11,6 +11,8 @@ A similar bug, which has existed since at least 9.0.0, can also be reproduced
 by replacing the click of the "Update the document" button in the last step
 with a click of the "delete" button followed by the "create" button.
 
+Googlers can see https://screencast.googleplex.com/cast/NTk1MjUwNzE1MTkwODg2NHxkNjNhMGJlMi1lNw for a video demo.
+
 # Steps to Reproduce
 
 1. Start the Firestore emulator (`firebase emulators:start --only firestore`)
